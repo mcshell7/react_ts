@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {Outlet} from "react-router-dom";
+import Menu from "../components/Menu/Menu";
 
-const MainLayout = () => {
+const MainLayout:FC = () => {
     return (
         <div>
-            
+            <Menu/>
             <Outlet/>
         </div>
     );

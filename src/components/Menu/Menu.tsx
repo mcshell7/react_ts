@@ -11,13 +11,7 @@ const Menu = () => {
                         <Link to='/'>Home</Link>
                     </li>
                     <li className={styles.menu__item}>
-                        <Link to='/users'>Users</Link>
-                    </li>
-                    <li className={styles.menu__item}>
-                        <Link to='/posts'>Posts</Link>
-                    </li>
-                    <li className={styles.menu__item}>
-                        <Link to='/comments'>Comments</Link>
+                        <Link to='/products'>Products</Link>
                     </li>
                 </ul>
             </nav>
