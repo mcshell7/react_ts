@@ -1,20 +1,13 @@
 import Joi from "joi";
 
 export const userValidator = Joi.object().keys({
-    username: Joi.string()
-        .required()
-        .pattern(/\w{3,7}/)
-        .messages({
-        "string.pattern.base" : "you don't match the pattern",
-        "any.required": "field is required"
-    }),
-    password: Joi.string().min(3).max(8).messages({
-        "string.min": "Password must be at least 3 character",
-        "string.max": "Password must be no longer 8 character"
-    }),
-    age: Joi.number().min(0).max(121).messages({
-        "number.min": "Age must be at least 0",
-        "number.max" : "Age must be no more than 121"
-    })
 
+    title: Joi.string().min(5).max(100).messages({
+        "string.min": "Title must be at least 100 character",
+        "string.max": "Title must be no longer 100 character"
+    }),
+    body: Joi.string().min(30).max(240).messages({
+        "number.min" : "Text must be at least 30 characters",
+        "number.max" : "Text must be no more than 240 characters"
+    })
 });
