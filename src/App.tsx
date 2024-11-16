@@ -1,17 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './App.css';
 
 function App() {
-    const [number, setNumber] = useState<number>(0);
 
-    useEffect(() => {
-    }, [number]);
+    //we can get DOM element like in js
+    const customRef = useRef<any>();
+    // we can't use useRef in UX/UI
+    // useRef can't be rendered!!!
 
     return (
     <div className="App">
-        <h2>{number}</h2>
-        <button onClick={() => {setNumber(prevState => prevState + 1);}}>increment</button>
-        <button onClick={() => {setNumber(prevState => prevState - 1)}}>decrement</button>
+        <input ref={customRef} type="text"/>
+        <button onClick={() => {
+            console.log(customRef)
+        }}>click me</button>
     </div>
   );
 }
